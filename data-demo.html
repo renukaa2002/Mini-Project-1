@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Demo | Express Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+      text-align: center;
+      z-index: 999;
+    }
+
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 70px; /* space for navbar */
+      font-family: Arial, sans-serif;
+      background-image: url('Soothing-nature.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .load-btn {
+      background-color: #ffd700;
+      color: #000;
+      padding: 12px 24px;
+      font-size: 1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .load-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #ffd700;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #ffd700;
+    }
+
+    .card p {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="data-demo.html">View Items</a>
+  </nav>
+
+  <h1>Explore Our Awesome JSON Data!</h1> <br>
+  <button class="load-btn" onclick="loadData()">Load Items </button>
+
+  <div class="card-container" id="itemsContainer"></div>
+
+  <script>
+    async function loadData() {
+      try {
+        const res = await fetch('/items');
+        const data = await res.json();
+
+        const container = document.getElementById('itemsContainer');
+        container.innerHTML = ''; // Clear previous content
+
+        data.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <h3>${item.name}</h3>
+            <p><strong>Category:</strong> ${item.category}</p>
+            <p><strong>Description:</strong> ${item.description}</p>
+            <p><strong>Price:</strong> $${item.price}</p>
+          `;
+          container.appendChild(card);
+        });
+      } catch (error) {
+        console.error('Failed to load data:', error);
+      }
+    }
+  </script>
+</body>
+</html>

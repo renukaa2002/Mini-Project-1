@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Eco Bottle",
+    "category": "Accessories",
+    "description": "Reusable water bottle made of bamboo fiber.",
+    "price": 12.99
+  },
+  {
+    "name": "Solar Charger",
+    "category": "Electronics",
+    "description": "Portable solar-powered phone charger.",
+    "price": 29.99
+  },
+  {
+    "name": "Bio Journal",
+    "category": "Stationery",
+    "description": "Notebook made from recycled paper.",
+    "price": 6.49
+  }
+]

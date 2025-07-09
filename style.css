@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: blue;
+}
+
+.card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+/* Set background image, cover whole screen, and fix it */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  height: 100vh;
+  background-image: url('Soothing-nature.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Center all text */
+  text-align: center;
+
+  /* For better readability */
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* Style the nav links */
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #ffd700;  /* golden color */
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #ffd700;
+}
+
+/* Cards for JSON items */
+.card {
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark bg */
+  padding: 15px;
+  margin: 15px auto;
+  border-radius: 12px;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}

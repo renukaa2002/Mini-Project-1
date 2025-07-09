@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home | Express Project</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Fixed navbar at the top */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+      text-align: center;
+      z-index: 999;
+    }
+
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background-image: url('Soothing-nature.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      text-align: center;
+    }
+
+    .hero {
+      margin-top: 120px; /* Add space below fixed navbar */
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: glow 2s infinite alternate;
+    }
+
+    .welcome {
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
+
+    .cta-button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      background-color: #ffd700;
+      color: #333;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #ffd700;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ffd700;
+      }
+
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ffae00;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="data-demo.html">View Items</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Welcome to Our Mini Express Project!</h1>
+    <p class="welcome">Discover how frontend meets backend in the simplest and coolest way.</p>
+    <button class="cta-button" onclick="location.href='data-demo.html'">Our Products</button>
+  </div>
+
+</body>
+
+</html>
